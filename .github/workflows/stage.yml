@@ -39,6 +39,8 @@ jobs:
         with:
           node-version: '12.x'
       - run : npm install
+      - name: Angular Test
+        run: npm run testreport
       - name: SonarCloud Scan
         run: npm run sonar
         env:
