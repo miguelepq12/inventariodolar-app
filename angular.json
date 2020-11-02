@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "inventariodolar-app": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "inventariodolar-app"
+    }
+  },
+  "defaultProject": "inventariodolar-app",
+  "cli": {
+    "analytics": "10b10cd9-6779-451c-9a32-5c1df0cbcce5"
+  }
 }
