@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "testreport": "ng test --browsers=ChromeHeadless --no-watch --code-coverage",
-    "sonar": "sonar-scanner -Dsonar.organization=miguelepq12 -Dsonar.projectKey=miguelepq12_inventariodolar-app -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=75f776a7c37b11e5b2b30d481a4a6b565ead527b"
+    "sonar": "sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=75f776a7c37b11e5b2b30d481a4a6b565ead527b"
   },
   "private": true,
   "dependencies": {
