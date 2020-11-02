@@ -28,6 +28,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Setup Java JDK
         uses: actions/setup-java@v1.4.3
         with:
@@ -37,6 +39,8 @@ jobs:
         with:
           node-version: '12.x'
       - run : npm install
+      - name: Angular Test
+        run: npm run testreport
       - name: SonarCloud Scan
         run: npm run sonar
         env:
