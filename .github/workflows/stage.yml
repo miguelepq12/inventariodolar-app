@@ -21,23 +21,16 @@ jobs:
       - name: Angular Test
         run: npm run testreport
 
-  sonar:
-    name: Test - SonarCloud Scan
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
     needs: [test]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Java JDK
-        uses: actions/setup-java@v1.4.3
         with:
-          java-version: '11.0.7' # The JDK version to make available on the path.
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - run : npm install
-      - name: Angular Test
-        run: npm run sonar
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
